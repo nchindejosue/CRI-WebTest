@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Bell } from 'lucide-react';
+import { Download, Bell, Smartphone } from 'lucide-react';
 
 const FinalCTA = () => {
-  const handleAndroidDownload = () => {
-    // This would link to your Supabase storage APK file
-    window.open('#', '_blank');
+  const handlePlayStoreClick = () => {
+    const event = new CustomEvent('openPlayStoreModal');
+    window.dispatchEvent(event);
   };
 
   const handleIOSWaitlist = () => {
-    // This will trigger the modal
     const event = new CustomEvent('openIOSModal');
     window.dispatchEvent(event);
   };
@@ -69,18 +68,18 @@ const FinalCTA = () => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(255, 255, 255, 0.2)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={handleAndroidDownload}
+              onClick={handlePlayStoreClick}
               className="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold flex items-center justify-center space-x-3 shadow-lg hover:bg-gray-50 transition-all duration-300"
             >
-              <Download size={24} />
-              <span>Download for Android</span>
+              <Smartphone size={24} />
+              <span>Get on Play Store</span>
             </motion.button>
 
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(255, 255, 255, 0.1)" }}
               whileTap={{ scale: 0.95 }}
               onClick={handleIOSWaitlist}
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold flex items-center justify-center space-x-3 hover:bg-white hover:text-purple-600 transition-all duration-300"
+              className="bg-white border-2 border-white text-purple-600 px-8 py-4 rounded-xl font-semibold flex items-center justify-center space-x-3 hover:bg-purple-50 transition-all duration-300"
             >
               <Bell size={24} />
               <span>Notify Me on iOS</span>

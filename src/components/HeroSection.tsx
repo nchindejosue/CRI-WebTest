@@ -152,15 +152,12 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ 
                   scale: 1.05, 
-                  boxShadow: "0 20px 40px rgba(255, 143, 0, 0.3)",
+                  boxShadow: "0 20px 40px rgba(147, 51, 234, 0.2)",
                   y: -2
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleIOSWaitlist}
-                className="border-2 border-gradient-to-r from-purple-600 to-orange-500 bg-gradient-to-r from-purple-50 to-orange-50 text-purple-700 px-8 py-4 rounded-xl font-semibold flex items-center justify-center space-x-3 hover:from-purple-100 hover:to-orange-100 transition-all duration-300 relative overflow-hidden group"
-                style={{
-                  borderImage: 'linear-gradient(45deg, #6A1B9A, #FF8F00) 1'
-                }}
+                className="bg-white border-2 border-purple-600 text-purple-700 px-8 py-4 rounded-xl font-semibold flex items-center justify-center space-x-3 hover:bg-purple-50 transition-all duration-300 relative overflow-hidden group shadow-lg"
               >
                 <motion.div
                   animate={{ 
