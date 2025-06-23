@@ -16,11 +16,12 @@ export const getLatestAPK = async () => {
       .from('apk_files')
       .select('*')
       .order('created_at', { ascending: false })
-      .limit(1)
-      .single();
+      .limit(1);
 
     if (error) throw error;
-    return data;
+    
+    // Return the first item if data exists and has elements, otherwise null
+    return data && data.length > 0 ? data[0] : null;
   } catch (error) {
     console.error('Error fetching latest APK:', error);
     return null;
