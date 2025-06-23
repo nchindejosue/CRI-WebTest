@@ -56,10 +56,12 @@ const Header = () => {
                 alt="CRI Logo" 
                 className="h-10 w-10 drop-shadow-lg"
                 style={{
-                  filter: 'drop-shadow(0 2px 4px rgba(106, 27, 154, 0.3))'
+                  filter: 'drop-shadow(0 2px 4px rgba(106, 27, 154, 0.3))',
+                  aspectRatio: '1/1',
+                  objectFit: 'cover'
                 }}
               />
-              <div className="absolute inset-0 bg-white rounded-full opacity-20 -z-10"></div>
+              <div className="absolute inset-0 bg-white rounded-full opacity-60 -z-10"></div>
             </div>
             <span className="text-xl font-bold">
               <span className="text-purple-600">CRI</span>

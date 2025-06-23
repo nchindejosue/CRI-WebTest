@@ -67,10 +67,12 @@ const Footer = () => {
                   alt="CRI Logo" 
                   className="h-12 w-12 drop-shadow-lg"
                   style={{
-                    filter: 'drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3))'
+                    filter: 'drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3))',
+                    aspectRatio: '1/1',
+                    objectFit: 'cover'
                   }}
                 />
-                <div className="absolute inset-0 bg-white rounded-full opacity-10 -z-10"></div>
+                <div className="absolute inset-0 bg-white rounded-full opacity-40 -z-10"></div>
               </div>
               <span className="text-2xl font-bold">
                 <span className="text-white">CRI</span>

@@ -39,11 +39,22 @@ const PlayStoreModal = () => {
     
     try {
       const latestAPK = await getLatestAPK();
-      if (latestAPK) {
+      if (latestAPK && latestAPK.file_path) {
+        // file_path now contains Google Drive file ID
         const downloadUrl = await getAPKDownloadUrl(latestAPK.file_path);
         if (downloadUrl) {
-          window.open(downloadUrl, '_blank');
+          // Create a temporary link element to trigger download
+          const link = document.createElement('a');
+          link.href = downloadUrl;
+          link.download = latestAPK.file_name || 'cri-app.apk';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else {
+          console.error('Failed to get download URL');
         }
+      } else {
+        console.error('No APK file found in database');
       }
     } catch (error) {
       console.error('Error downloading APK:', error);
